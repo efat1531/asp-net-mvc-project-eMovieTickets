@@ -1,4 +1,4 @@
-﻿using eTickets.Data;
+﻿using eMovieTickets.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
