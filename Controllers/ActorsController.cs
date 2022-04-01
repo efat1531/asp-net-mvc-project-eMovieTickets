@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 using eMovieTickets.Data;
 using eMovieTickets.Data.Services;
 using eMovieTickets.Models;
+using eMovieTickets.Data.Static;
+using Microsoft.AspNetCore.Authorization;
 
 namespace eMovieTickets.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class ActorsController : Controller
     {
         private readonly IActorsService _service;
@@ -18,6 +21,7 @@ namespace eMovieTickets.Controllers
             _service = service;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
@@ -42,6 +46,7 @@ namespace eMovieTickets.Controllers
         }
 
         //Get: Actors/Details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
