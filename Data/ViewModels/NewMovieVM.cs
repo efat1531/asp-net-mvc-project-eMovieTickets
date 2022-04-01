@@ -11,6 +11,10 @@ namespace eMovieTickets.Models
 {
     public class NewMovieVM
     {
+
+        public int Id { get; set; }
+
+
         [Display(Name = "Movie name")]
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
@@ -19,7 +23,7 @@ namespace eMovieTickets.Models
         [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
 
-        [Display(Name = "Price in $")]
+        [Display(Name = "Price in BDT")]
         [Required(ErrorMessage = "Price is required")]
         public double Price { get; set; }
 
