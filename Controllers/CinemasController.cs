@@ -20,14 +20,6 @@ namespace eMovieTickets.Controllers
         {
             _service = service;
         }
-
-        [AllowAnonymous]
-        public async Task<IActionResult> Index()
-        {
-            var allCinemas = await _service.GetAllAsync();
-            return View(allCinemas);
-        }
-
         //Get: Cinemas/Details/1
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
